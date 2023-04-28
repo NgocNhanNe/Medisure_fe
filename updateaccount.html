@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
+  <meta name="author" content="themefisher.com">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+  <title>Medisure - Health & Care Medical</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="plugins/icofont/icofont.min.css">
+  <link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css">
+  <link rel="stylesheet" href="plugins/slick-carousel/slick/slick-theme.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/menu.js"></script>
+  <script src="js/account.js"></script>
+  <script>
+	window.onload = function(){
+		loadmenu();
+        loadAllSpecialist();
+        loadPatinetRecode();
+        loadmail();
+	}
+  </script>
+</head>
+
+<body id="top">
+<header id="menu"></header>
+
+<!-- Slider Start -->
+<section class="">
+	<div class="container">
+		<div class="row">
+            <div class="col-md-12">
+                <h4 class="title-taikhoan">Your Profile</h4>
+            </div>
+            <div class="col-md-5">
+                <div class="group-tabs">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                      <li role="presentation" class="active changep changep-active"><a class="sss" href="#home" aria-controls="home" role="tab" data-toggle="tab">Change Password</a></li>
+                      <li role="presentation" class="changep cahngrs"><a class="sss" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Change Email</a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="home">
+                            <div class="container chitietthongtintk">
+                                <div class="profile-detail">
+                                    <!-- <h3>Change password</h3> -->
+                                </div>
+                                <div class="content-profile">
+                                    <label>Current Password</label>
+                                    <input id="oldpass" class="form-control" type="password" placeholder="*****">
+                                    <label>New Password</label>
+                                    <input id="newpass" class="form-control" type="password" placeholder="*****">
+                                    <label>Re-New Password</label>
+                                    <input id="renewpass" class="form-control" type="password" placeholder="*****">
+                                    <button onclick="changepass()" class="luuthaydoi">Change password</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="profile">
+                            <div class="container chitietthongtintk">
+                                <div class="profile-detail">
+                                    <p>Change Email</p>
+                                </div>
+                                <div class="content-profile">
+                                    <label>Email</label>
+                                    <input id="email" class="form-control" type="email">
+                                    <button onclick="updateEmail()" class="luuthaydoi">Change</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-7">
+                <div class="container chitietthongtintk chitietthongtintk_12">
+                    <div class="profile-detail">
+                        <p>Patient record</p>
+                    </div>
+                    <div class="content-profile">
+                        <input id="idpatinet" type="hidden" class="form-control">
+                        <label>Full name</label>
+                        <input id="fullname" class="form-control">
+                        <label>Phone</label>
+                        <input id="phone" class="form-control">
+                        <label>Address</label>
+                        <input id="address" class="form-control">
+                        <label>Gender</label>
+                                    <select class="form-control" id="sex">
+                                        <option value="0">Male</option>
+                                        <option value="1">Female</option>
+                                    </select>
+                        <label>Specialist</label>
+                        <select class="form-control" id="specialist">
+                            <option value="">Cardiology Department</option>
+                            <option>Dermatology Department</option>
+                        </select>
+                        <label>Describe the disease</label>
+                        <textarea class="form-control" id="description"></textarea>
+                        <button onclick="addPatinetRecord()" class="luuthaydoi">Add/ Update</button>
+                    </div>
+                </div>
+            </div>
+		</div>
+    </div>
+</section>
+<!-- footer Start -->
+<footer class="footer section gray-bg" id="footer">
+	
+</footer>
+    
+    <!-- Main jQuery -->
+    <script src="plugins/jquery/jquery.js"></script>
+    <script src="plugins/bootstrap/js/popper.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="plugins/counterup/jquery.easing.js"></script>
+    <script src="plugins/slick-carousel/slick/slick.min.js"></script>
+    <script src="plugins/counterup/jquery.waypoints.min.js"></script>
+    <script src="plugins/shuffle/shuffle.min.js"></script>
+    <script src="plugins/counterup/jquery.counterup.min.js"></script>
+    <script src="plugins/google-map/map.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>    
+
+  </body>
+  </html>
+   

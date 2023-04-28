@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Admin</title>
+  <script src="vendors/js/vendor.bundle.base.js"></script>
+  <link rel="stylesheet" href="vendors/feather/feather.css">
+  <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js"></script>
+  <link href="https://cdn.datatables.net/1.13.2/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+  <script src="handle/menuadmin.js"></script>
+  <script src="handle/doctor.js"></script>
+  
+  <script>
+      window.onload = function(){
+        checkroleAdmin();
+        loadMenu();
+        loadAllDoctor();
+      }
+  </script>
+</head>
+<body>
+  <div class="container-scroller"> 
+    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row" id="topmenu"> </nav>
+    <div class="container-fluid page-body-wrapper">
+      <nav class="sidebar sidebar-offcanvas" id="sidebar"></nav>
+      <div class="container content_div">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                    <button onclick="window.location.replace('adddoctor.html')" class="btn btn-primary"><i class="fa fa-plus"></i> Add doctor</button>
+                </p>
+                <div class="table-responsive pt-3">
+                    <table id="example" class="table table-striped" style="width:100%; margin-top: 50px;">
+                        <thead>
+                            <tr>
+                                <th>Delete</th>
+                                <th>Update</th>
+                                <th>Doctor_Id</th>
+                                <th>Avatar</th>
+                                <th>Full Name</th>
+                                <th>Phone</th>
+                                <th>Address</th>
+                                <th>Specialist</th>
+                                <th>Email</th>
+                                <th>Gender</th>
+                            </tr>
+                        </thead>
+                        <tbody id="listdoctor">
+                            <tr>
+                                <td>#2342</td>
+                                <td><img src="images/faces/face10.jpg"></td>
+                                <td>johns smait</td>
+                                <td>0932748234</td>
+                                <td>TP.HCM</td>
+                                <td>Dermatology Department</td>
+                                <td>john@gmail.com</td>
+                                <td>Male</td>
+                                <td><button class="btn btn-danger"><i class="fa fa-lock"></i>Lock</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <script src="vendors/js/vendor.bundle.base.js"></script> -->
+  <script src="vendors/chart.js/Chart.min.js"></script>
+  <script src="vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+  <script src="vendors/progressbar.js/progressbar.min.js"></script>
+  <script src="js/off-canvas.js"></script>
+  <script src="js/hoverable-collapse.js"></script>
+  <script src="js/template.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/todolist.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/Chart.roundedBarCharts.js"></script>
+  <!-- <script src="vendors/js/vendor.bundle.base.js"></script> -->
+</body>
+
+</html>
+

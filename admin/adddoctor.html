@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Admin</title>
+  <script src="vendors/js/vendor.bundle.base.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+  <link rel="stylesheet" href="vendors/feather/feather.css">
+  <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+  <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script src="handle/menuadmin.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js"></script>
+  <link href="https://cdn.datatables.net/1.13.2/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+  <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+  <script src="handle/doctor.js"></script>
+  <script>
+      tinymce.init({
+          selector : 'textarea#editor',
+      });
+  </script>
+  <script>
+      window.onload = function(){
+        checkroleAdmin();
+        loadMenu();
+        loadAllSpecialistDoctor();
+        loadADoctor();
+      }
+  </script>
+</head>
+<body>
+  <div class="container-scroller"> 
+    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row" id="topmenu"> </nav>
+    <div class="container-fluid page-body-wrapper">
+      <nav class="sidebar sidebar-offcanvas" id="sidebar"></nav>
+      <div class="container content_div">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                    <h3>Add/ Update doctor</h3>
+                <div class="table-responsive pt-3">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <input id="iddoctor" type="hidden">
+                            <input id="iduserdoctor" type="hidden">
+                            <label class="lb_s">Full Name:</label>
+                            <input id="fullname" class="form-control" placeholder="Full name">
+                            <label class="lb_s">Address:</label>
+                            <input id="address" class="form-control" placeholder="Address">
+                            <label class="lb_s">Phone:</label>
+                            <input id="phone" class="form-control" placeholder="Address">
+                            <label class="lb_s">Gender:</label>
+                            <select class="form-control" id="sex">
+                                <option value="0">Male</option>
+                                <option value="1">Famale</option>
+                            </select>
+                            <label class="lb_s">Avatar:</label>
+                            <input id="avatardoctor" type="file" class="form-control">
+                            <img id="avatar_img">
+                            <button onclick="addDoctor()" class="btn-primary addorupdatebtn">Add/ update doctor</button>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <label class="lb_s">Username:</label>
+                            <input id="username" class="form-control" placeholder="Username">
+                            <label class="lb_s">Email:</label>
+                            <input id="email" type="email" class="form-control" placeholder="Email">
+                            <label class="lb_s">Specialist:</label>
+                            <select class="form-control" id="listspecialist">
+                                <option value="">Ent – Eye – Odontology Department</option>
+                                <option>Dermatology Department</option>
+                            </select>
+                            <label class="lb_s">Description</label>
+                            <textarea id="editor"  name="content"></textarea>
+                        </div>
+                    </div>  
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+<script>
+    avatardoctor.onchange = evt => {
+        const [file] = avatardoctor.files
+        if (file) {
+            avatar_img.src = URL.createObjectURL(file)
+        }
+    }
+</script>
+  <!-- <script src="vendors/js/vendor.bundle.base.js"></script> -->
+  <script src="vendors/chart.js/Chart.min.js"></script>
+  <script src="vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+  <script src="vendors/progressbar.js/progressbar.min.js"></script>
+  <script src="js/off-canvas.js"></script>
+  <script src="js/hoverable-collapse.js"></script>
+  <script src="js/template.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/todolist.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/Chart.roundedBarCharts.js"></script>
+</body>
+
+</html>
+

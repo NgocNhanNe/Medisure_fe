@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
+  <meta name="author" content="themefisher.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <title>Medisure - Health & Care Medical</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="plugins/icofont/icofont.min.css">
+  <link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css">
+  <link rel="stylesheet" href="plugins/slick-carousel/slick/slick-theme.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/menu.js"></script>
+  <script src="js/schedule.js"></script>
+  <script src="js/apointment.js"></script>
+  <script>
+	window.onload = function(){
+        checkRoleUser();
+        checkpatines();
+        loadmenu();
+        loadAllSchedule(0);
+	}
+  </script>
+</head>
+
+<body id="top">
+<header id="menu"></header>
+
+<!-- Slider Start -->
+<section class="">
+	<div class="container">
+		<div class="row">
+            <div class="col-md-10 apointment">
+                <div class="container chitietthongtintks apoi">
+                    <div class="title_apoitment">
+                        <p class="title_apoitments">My Apointment</p>
+                    </div>
+                    <div class="contenst">
+                        <div class="search_bs">
+                            <i class="fa fa-search"></i>
+                            <input class="searchbs" placeholder="search......." id="param" onkeyup="loadAllSchedule(1)">
+                        </div>
+                        <div class="fil_date">
+                            <label style="display: block;">Start Date <span style="margin-left: 30%;">End Date</span></label>
+                            <input type="date" id="startdate">
+                            <label style="margin-left: 8%;"></label>
+                            <input type="date" id="enddate">
+                            <button onclick="loadAllSchedule()" class="form-control" style="background-color: #223a66; color: white;"><i class="fa fa-filter">Filter</i></button>
+                        </div>
+                        <div class="list_schedule" id="list_schedule">
+                            <div class="singel_profile">
+                                <table class="table_singel_profile">
+                                    <tr>
+                                        <td class="col_1"><i class="u_sing fa fa-user"></i></td>
+                                        <td class="col_2 u_sing">Doctor: <span>Đào tuyến duy</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fa fa-user-md"></i></td>
+                                        <td class="col_2">Specialist: <span>internal medicine department</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fa fa-calendar"></i></td>
+                                        <td class="col_2">Apointment Date: <span>2023-03-1</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fa fa-clock"></i></td>
+                                        <td class="col_2">Apointment Time: <span>8h-9h</span></td>
+                                    </tr>
+                                </table><br>
+                                <button class="btn btn-danger ">Delete</button>
+                                <button class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">Note</button>
+                            </div>
+                           
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+    </div>
+</section>
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+            <div class="container detail_sche" style="margin-top: 50px;margin-bottom: 50px;">
+                <div class="row">
+                  <div class="col-md-5">
+                    <!-- <h6 style="text-align: center;">NOTE's DOCTOR</h6> -->
+                    <table class="table_singel_profile">
+                        <tr>
+                            <td class="col_1"><i class="u_sing fa fa-user"></i></td>
+                            <td class="col_2 u_sing">Doctor: <span id="doctorname">Đào tuyến duy</span></td>
+                        </tr>
+                        <tr style="border-top: 12px solid transparent;">
+                            <td><i class="fa fa-calendar"></i></td>
+                            <td class="col_2">Medicines: <span id="medicines">aspirin, antibiotics,cough mixture</span></td>
+                        </tr>
+                        <tr style="border-top: 12px solid transparent;">
+                            <td><i class="fa fa-money-bill" aria-hidden="true"></i></td>
+                            <td class="col_2">Note: <span id="noteschedule">Take the medicine after meals, 1 tablet each dose</span></td>
+                        </tr>
+                    </table><br>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="col-md-12">
+                      <h4 style="margin-top:20px">Image uploaded</h4>
+                      <div class="row" id="listimgs">
+                        <div class="col-md-4">
+                          <img src="images/faces/face16.jpg" style="width: 100%;">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+      </div>
+    </div>
+  </div>
+<!-- footer Start -->
+<footer class="footer section gray-bg" id="footer">
+</footer>
+<div class="modal fade viewInvoice" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          <div class="container">
+              <div class="row">
+                <div class="col-md-8" style="margin: auto;margin-top: 50px; margin-bottom: 50px;">
+                  <table id="details" class="table table-striped" style="width:100%; margin-top: 50px;">
+                    <p style="text-align: center; font-size: 25px; font-weight: bold;">DETAILS INVOICE</p>
+                    <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Medicine name</th>
+                          <th></th>
+                          <th>Price</th>
+                          <th></th>
+                          <th>Description</th>
+                          <!-- <th>Additional Cost</th> -->
+                        </tr>
+                    </thead>
+                    <tbody id="listdetail">
+                        <tr>
+                          <td>#4344</td>
+                          <td>Ent – Eye – Odontology Department</td>
+                          <td style="font-size: 20px; font-weight: bold;">450000</td>
+                        </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- <div class="col-md-4" style="margin-top: 50px;">
+                  <h3>Choose medical process</h3>
+                  <input class="form-control" id="idscheduledetail" type="hidden">
+                  <select id="listprocessDetail" class="form-control multi_select" multiple data-live-search="true">
+                    <option data-tokens="china">China</option>
+                    <option data-tokens="malayasia">Malayasia</option>
+                    <option data-tokens="singapore">Singapore</option>
+                  </select>
+                  <button onclick="addProcessToInvoice()" class="form-control btn btn-primary">Add process to this invoice</button>
+                </div> -->
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+    <!-- Main jQuery -->
+    <script src="plugins/jquery/jquery.js"></script>
+    <script src="plugins/bootstrap/js/popper.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="plugins/counterup/jquery.easing.js"></script>
+    <script src="plugins/slick-carousel/slick/slick.min.js"></script>
+    <script src="plugins/counterup/jquery.waypoints.min.js"></script>
+    <script src="plugins/shuffle/shuffle.min.js"></script>
+    <script src="plugins/counterup/jquery.counterup.min.js"></script>
+    <script src="plugins/google-map/map.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>    
+
+  </body>
+  </html>
+   

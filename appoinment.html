@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
+  <meta name="author" content="themefisher.com">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+  <title>Medisure - Health & Care Medical</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="plugins/icofont/icofont.min.css">
+  <link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css">
+  <link rel="stylesheet" href="plugins/slick-carousel/slick/slick-theme.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/menu.js"></script>
+  <script src="js/apointment.js"></script>
+  <script src="js/schedule.js"></script>
+  <script>
+	window.onload = function(){
+		checkRoleUser();
+		checkpatines();
+		loadAllSpecialist();
+		loadmenu();
+		loadAllDoctor();
+		loadInitTime();
+	}
+  </script>
+</head>
+
+<body id="top">
+<header id="menu"></header>
+	
+
+
+<section class="page-titles bg-1">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block text-center">
+          <h1 class="text-capitalize mb-5 text-lg">Appointment</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="appoinment section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+		<div class="col-md-12 apointment">
+			<div class="container chitietthongtintks apoi">
+				<div class="title_apoitment">
+					<p class="title_apoitments">CHOOSE TIME</p>
+				</div>
+				<div class="contenst">
+					<label style="color:#144272">Choose date</label>
+					<input style="color:#144272" type="date" class="form-control" id="chonngay" onchange="chonNgay()">
+					<br/>
+					<label style="color:#144272">Choose time</label><br>
+					<div id="list_time">
+						<section class="doctors">
+							<div class="btn-group btn-group-toggle" data-toggle="buttons">
+								<div class="row" id="listtime">
+									<div class="col-md-6 signletime">
+										<label class="btn chongio">
+											<input style="display: none;" type="radio" name="shuffle-filter" value="all" checked="checked" />08:00-09:00
+										</label>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+					<hr>
+					<table>
+						<tr>
+							<td class="col_1"><i class="u_sing fa fa-user"></i></td>
+							<td class="col_2 u_sing">Doctor: <span id="doctorname"></span></td>
+						</tr>
+						<tr>
+							<td><i class="fa fa-user-md"></i></td>
+							<td class="col_2 u_sing1">Specialist: <span id="specialistname"></span></td>
+						</tr>
+						<tr>
+							<td><i class="fa fa-calendar"></i></td>
+							<td class="col_2 u_sing1">Date: <span id="datechoose"></span></td>
+						</tr>
+						<tr>
+							<td><i class="fa fa-clock"></i></td>
+							<td class="col_2 u_sing1">Time: <span id="timechoose"></span></td>
+						</tr>
+					</table>
+					<button id="butoonbook" style="font-weight: bold;" class="btn-primary form-control btnbook" disabled onclick="addSchedule()">Book</button>
+				</div>
+			</div>
+      </div>
+      </div>
+
+      <div class="col-lg-8">
+		<div class="col-md-12 apointment">
+			<div class="container chitietthongtintks apoi">
+				<div class="title_apoitment">
+					<p class="title_apoitments">CHOOSE DOCTOR</p>
+				</div>
+				<div class="contenst">
+					<div class="search_bs">
+						<i class="fa fa-search"></i>
+						<input class="searchbs" placeholder="search......." id="param">
+					</div>
+					<div class="">
+						<div class="row">
+							<div class="col-md-4">
+								<label>Gender</label>
+								<select class="form-control" id="sex">
+									<option value="-1">Male & Female</option>
+									<option value="0">Male</option>
+									<option value="1">Female</option>
+								</select>
+							</div>
+							<div class="col-md-4">
+								<label>Specialist</label>
+								<select class="form-control" id="specialist">
+									<option value="">Anesthesia Department</option>
+								</select>
+							</div>
+							<div class="col-md-4">
+								<label>.</label>
+								<button onclick="loadAllDoctor()" class="form-control" style="background-color: #223a66; color: white;"><i class="fa fa-filter">Filter</i></button>
+							</div>
+						</div>
+					</div>
+					<div class="list_schedule" id="listdoctor">
+						<div class="singel_profile singel_p">
+							<table class="table_singel_profile">
+								<tr>
+									<td class="col_1"><i class="u_sing fa fa-user"></i></td>
+									<td class="col_2 u_sing">Doctor: <p>Đào tuyến duy</p></td>
+								</tr>
+								<tr>
+									<td><i class="fa fa-user-md"></i></td>
+									<td class="col_2">Specialist: <span>internal medicine department</span></td>
+								</tr>
+								<tr>
+									<td><i class="fa fa-venus"></i></td>
+									<td class="col_2">Gender: <span>Male</span></td>
+								</tr>
+								<tr>
+									<td><i class="fa fa-money-bill" aria-hidden="true"></i></td>
+									<td class="col_2">Price: <span>1.200.000.đ</span></td>
+								</tr>
+							</table>
+							<label class="radio-custom chonbs">choose
+								<input type="radio" name="radio">
+								<span class="checkmark"></span>
+							</label>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+	 var today = new Date().toISOString().split('T')[0];
+    document.getElementById("chonngay").setAttribute('min', today);
+	document.getElementById('chonngay').valueAsDate = new Date();
+</script>
+<!-- footer Start -->
+<footer class="footer section gray-bg" id="footer">
+    
+    <script src="plugins/jquery/jquery.js"></script>
+    <script src="plugins/bootstrap/js/popper.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="plugins/counterup/jquery.easing.js"></script>
+    <script src="plugins/slick-carousel/slick/slick.min.js"></script>
+    <script src="plugins/counterup/jquery.waypoints.min.js"></script>
+    <script src="plugins/shuffle/shuffle.min.js"></script>
+    <script src="plugins/counterup/jquery.counterup.min.js"></script>
+    <script src="plugins/google-map/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>    
+    <script src="js/script.js"></script>
+    <script src="js/contact.js"></script>
+
+  </body>
+  </html>
