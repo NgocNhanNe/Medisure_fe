@@ -290,7 +290,9 @@ async function changepass(){
             type: "success"
           },
         function(){ 
-          logoutadmin()
+        //   logoutadmin()
+          localStorage.removeItem("token");
+          window.location.replace("../login.html")
         });
     }
     else{
