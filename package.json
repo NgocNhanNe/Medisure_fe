@@ -2,5 +2,8 @@
   "name": "medisure_frontend",
   "version": "1.0.0",
   "dependencies": {
-  }
+  },
+  "proxy":"https://medisure.herokuapp.com/"
 }
+
+
