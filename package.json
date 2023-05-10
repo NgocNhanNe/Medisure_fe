@@ -1,14 +1,9 @@
 {
   "name": "medisure_frontend",
   "version": "1.0.0",
-  "scripts": {
-    "start": "node index.js"
-  },
   "dependencies": {
-    "express": "3.0.6"
   },
   "engines": {
-    "node": "19.7.0",
-    "npm": "1.4.29"
+    "node": "19.7.0"
   }
 }
