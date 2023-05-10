@@ -2,8 +2,7 @@
   "name": "medisure_frontend",
   "version": "1.0.0",
   "scripts": {
-    "start": "npm start",
-    "run": "npm run"
+    "start": "node server.js"
   },
   "dependencies": {
   },
