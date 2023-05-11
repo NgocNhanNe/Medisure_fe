@@ -1,1 +1,1 @@
-java -Dserver.port=$PORT $JAVA_OPTS -jar target/Medisure_Frontend-0.0.1-SNAPSHOT.jar
+web: bundle exec rails server -p $PORT
