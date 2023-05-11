@@ -1,6 +1,13 @@
 {
   "name": "medisure_frontend",
   "version": "1.0.0",
+  "scripts": {
+    "postinstall": "npm run build",
+    "start": "node index.js"
+  },
   "dependencies": {
+  },
+  "engines": {
+    "node": "19.7.0"
   }
 }
