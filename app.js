@@ -1,5 +1,8 @@
 require('dotenv').config();
-let server = app.listen(process.env.PORT || 5000, function () {
-    logger.api.info(`Server listening on port ${server.address().port}`);
-    console.log(`Server listening on port ${server.address().port}`);
-  });
+// PORT
+const PORT = process.env.PORT || 8080;
+
+// Listen on port 8081
+app.listen(PORT, () =>
+  console.log(`Application is listening on port ${PORT}!`)
+);
