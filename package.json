@@ -4,9 +4,15 @@
   "scripts": {
     "start": "npm start"
   },
-  "dependencies": {
-  },
   "engines": {
     "node": "19.7.0"
+  },
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.0.3"
   }
 }
